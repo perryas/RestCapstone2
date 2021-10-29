@@ -4,11 +4,12 @@ import React, { useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Container, Nav, NavItem } from "reactstrap";
+import { logout } from "../lib/auth";
 import AppContext from "./context";
 
 const Layout = (props) => {
-const title = "Welcome to Nextjs";
-const {user} = useContext(AppContext);
+const title = "Welcome to Ayana's Restaurant App";
+const {user, setUser } = useContext(AppContext);
   return (
     <div>
       <Head>

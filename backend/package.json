@@ -18,6 +18,9 @@
     "eslint-plugin-react": "^7.14.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "isomorphic-fetch": "^2.2.1",
+    "js-cookie": "^2.2.1",
     "knex": "^0.21.6",
     "lodash": "^4.17.5",
     "sqlite3": "^5.0.0",
@@ -33,7 +36,7 @@
     "strapi-plugin-upload": "3.0.0-beta.14",
     "strapi-plugin-users-permissions": "3.0.0-beta.14",
     "strapi-utils": "3.0.0-beta.14",
-    "stripe": "^8.109.0"
+    "stripe": "^8.184.0"
   },
   "author": {
     "name": "A Strapi developer + updates john R Williams jrw@mit.edu"

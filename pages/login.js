@@ -12,8 +12,8 @@ import {
   Label,
   Input,
 } from "reactstrap";
-import { login } from "../components/auth";
-import AppContext from "../components/context";
+import { login } from "../lib/auth";
+import AppContext from "../context/AppContext";
 
 function Login(props) {
   const [data, updateData] = useState({ identifier: "", password: "" });
@@ -33,82 +33,82 @@ function Login(props) {
   }
 
   return (
-    <Container>
-      <Row>
-        <Col sm="12" md={{ size: 5, offset: 3 }}>
-          <div className="paper">
-            <div className="header">
-              <img src="http://localhost:1337/uploads/5a60a9d26a764e7cba1099d8b157b5e9.png" />
-            </div>
-            <section className="wrapper">
-              {Object.entries(error).length !== 0 &&
+      <Container>
+        <Row>
+          <Col sm="12" md={{ size: 5, offset: 3 }}>
+            <div className="paper">
+              <div className="header">
+                <img src="https://strapi.io/assets/images/logo.png" />
+              </div>
+              <section className="wrapper">
+                {Object.entries(error).length !== 0 &&
                 error.constructor === Object &&
                 error.message.map((error) => {
                   return (
-                    <div
-                      key={error.messages[0].id}
-                      style={{ marginBottom: 10 }}
-                    >
-                      <small style={{ color: "red" }}>
-                        {error.messages[0].message}
-                      </small>
-                    </div>
+                      <div
+                          key={error.messages[0].id}
+                          style={{ marginBottom: 10 }}
+                      >
+                        <small style={{ color: "red" }}>
+                          {error.messages[0].message}
+                        </small>
+                      </div>
                   );
                 })}
-              <Form>
-                <fieldset disabled={loading}>
-                  <FormGroup>
-                    <Label>Email:</Label>
-                    <Input
-                      onChange={(event) => onChange(event)}
-                      name="identifier"
-                      style={{ height: 50, fontSize: "1.2em" }}
-                    />
-                  </FormGroup>
-                  <FormGroup style={{ marginBottom: 30 }}>
-                    <Label>Password:</Label>
-                    <Input
-                      onChange={(event) => onChange(event)}
-                      type="password"
-                      name="password"
-                      style={{ height: 50, fontSize: "1.2em" }}
-                    />
-                  </FormGroup>
+                <Form>
+                  <fieldset disabled={loading}>
+                    <FormGroup>
+                      <Label>Email:</Label>
+                      <Input
+                          onChange={(event) => onChange(event)}
+                          name="identifier"
+                          style={{ height: 50, fontSize: "1.2em" }}
+                      />
+                    </FormGroup>
+                    <FormGroup style={{ marginBottom: 30 }}>
+                      <Label>Password:</Label>
+                      <Input
+                          onChange={(event) => onChange(event)}
+                          type="password"
+                          name="password"
+                          style={{ height: 50, fontSize: "1.2em" }}
+                      />
+                    </FormGroup>
 
-                  <FormGroup>
+                    <FormGroup>
                     <span>
                       <a href="">
                         <small>Forgot Password?</small>
                       </a>
                     </span>
-                    <Button
-                      style={{ float: "right", width: 120 }}
-                      color="primary"
-                      onClick={() => {
-                        setLoading(true);
-                        login(data.identifier, data.password)
-                          .then((res) => {
-                            setLoading(false);
-                            // set authed User in global context to update header/app state
-                            appContext.setUser(res.data.user);
-                          })
-                          .catch((error) => {
-                            //setError(error.response.data);
-                            setLoading(false);
-                          });
-                      }}
-                    >
-                      {loading ? "Loading... " : "Submit"}
-                    </Button>
-                  </FormGroup>
-                </fieldset>
-              </Form>
-            </section>
-          </div>
-        </Col>
-      </Row>
-      <style jsx>
-        {`
+                      <Button
+                          style={{ float: "right", width: 120 }}
+                          color="primary"
+                          onClick={() => {
+                            setLoading(true);
+                            login(data.identifier, data.password)
+                                .then((res) => {
+                                  setLoading(false);
+                                  // set authed User in global context to update header/app state
+                                  appContext.setUser(res.data.user);
+                                })
+                                .catch((error) => {
+                                  //setError(error.response.data);
+                                  setLoading(false);
+                                });
+                          }}
+                      >
+                        {loading ? "Loading... " : "Submit"}
+                      </Button>
+                    </FormGroup>
+                  </fieldset>
+                </Form>
+              </section>
+            </div>
+          </Col>
+        </Row>
+        <style jsx>
+          {`
           .paper {
             border: 1px solid lightgray;
             box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -137,8 +137,8 @@ function Login(props) {
             margin: 15px 30px 10px 50px;
           }
         `}
-      </style>
-    </Container>
+        </style>
+      </Container>
   );
 }
 
