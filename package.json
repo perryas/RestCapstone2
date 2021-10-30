@@ -1,11 +1,14 @@
 {
-  "name": "restaurant-app",
+  "name": "RestCapstone",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "dependencies": {
     "@apollo/client": "^3.2.4",
