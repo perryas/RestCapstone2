@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41cb9c31-9019-44bd-aa0f-2f21197332ea" name="Changes" comment="" />
+    <list default="true" id="41cb9c31-9019-44bd-aa0f-2f21197332ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +46,7 @@
       <updated>1635462632330</updated>
       <workItem from="1635462633707" duration="14000" />
       <workItem from="1635527009510" duration="10338000" />
-      <workItem from="1635823175453" duration="667000" />
+      <workItem from="1635823175453" duration="1988000" />
     </task>
     <task id="LOCAL-00001" summary="Added Stripe code">
       <created>1635544176620</created>
@@ -67,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635823519121</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'github/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;yarn.lock">
+      <created>1635824005786</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635824005786</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
